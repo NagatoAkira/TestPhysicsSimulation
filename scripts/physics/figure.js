@@ -10,6 +10,9 @@ class Figure{
 		// Inner Physics of Every Object
 		this.Physics = new Physics(this)
 		this.IsDynamic = IsDynamic
+
+		// Collision
+		this.Collision = new Collision(this)
 	}
 	drawDots(){ // Draw Connection Between Dots
 		ctx.beginPath()
@@ -52,5 +55,7 @@ class Figure{
 
 		// Inner Physics of Object
 		this.IsDynamic ? this.Physics.update():null
+		// Collision check
+		this.Collision.update()
 	}
 }

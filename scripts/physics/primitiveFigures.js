@@ -18,9 +18,10 @@ class Circle{
 		this.radius = radius
 		this.amount = amount
 
+		this.isDynamic = isDynamic
+
 		this.figure = null
 		this.initFigure()
-		this.isDynamic = isDynamic
 	}
 	initFigure(){
 		let dots = []

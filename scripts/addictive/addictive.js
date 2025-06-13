@@ -26,3 +26,12 @@ function getVector(x1,y1,x2,y2){
 	let dist = getDistance(x1,y1,x2,y2)
 	return {x:vector.x/dist, y:vector.y/dist} 
 }
+function getSign(number){
+	if(number > 0){
+		return 1
+	}
+	if(number < 0){
+ 		return -1
+	}
+	return 0
+}
