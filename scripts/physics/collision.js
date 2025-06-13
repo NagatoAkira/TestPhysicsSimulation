@@ -22,7 +22,7 @@ class Collision{
 			let vec01 = getVector(dot01.x, dot01.y, dot02.x, dot02.y)
 			let vec02 = getVector(dot01.x, dot01.y, this.center.x, this.center.y)
 
-			let angle = -Math.PI+Math.atan2(vec01.y,vec01.x)
+			let angle = Math.PI/2-Math.atan2(vec01.y,vec01.x)
 			let sign = getSign(Math.cos(Math.atan2(vec02.y,vec02.x)+angle))
 
 			let vec = {sign:sign, anchor: dot01, angle: angle}
@@ -36,7 +36,7 @@ class Collision{
 			let vec = getVector(mesh.anchor.x, mesh.anchor.y, x, y)
 
 			let sign = getSign(Math.cos(Math.atan2(vec.y, vec.x)+mesh.angle))
-
+			
 			if(sign != mesh.sign){
 				return false
 			}

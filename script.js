@@ -14,7 +14,7 @@ function clearScene(){
 
 var scene = new Scene()
 
-scene.add(new Circle(150,150,80,3,false))
+scene.add(new Circle(150,150,80,5,false))
 //scene.add(new Rectangle(150,350,150,30,false))
 //scene.add(new Figure([new Dot(150,150),new Dot(250,150),new Dot(250,250),new Dot(150,250)], new Center(200,200)))
 
