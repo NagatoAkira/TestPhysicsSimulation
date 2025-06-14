@@ -29,7 +29,7 @@ class Collision{
 		 	this.mesh.push(vec)
 		}
 	}
-	isCollided(x,y){ // self is other figure // TEST with POS
+	isCollidedDot(x,y){ // Input Position Of Dot
 		let state = []
 		for(let mesh in this.mesh){
 			mesh = this.mesh[mesh]
@@ -41,8 +41,16 @@ class Collision{
 				return false
 			}
 		}
-		console.log("Mouse is Collided")
 		return true
+	}
+	isCollidedFigure(figure){ // Input Figure Object
+		for(let dot in figure.dots){
+			dot = figure.dots[dot]
+			if(this.isCollidedDot(dot.x, dot.y)){
+				return true
+			}
+		}
+		return false
 	}
 	update(){
 		return

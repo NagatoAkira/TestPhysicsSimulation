@@ -4,12 +4,23 @@ class Physics{
 		this.self.vector = {x:0, y:0}
 
 		this.vectors = {}
+
+		//this.Collision = this.self.Collision
+		
+		this.gravity()
 	}
 	gravity(){
-		this.vectors.gravity = {x:0, y:1,power:1} 
+		this.vectors.gravity = {x:0, y:1, power:1} 
+	}
+	stop(figure){ // Input Figure // TEST CONTINUE LATER
+		if(this.self.Collision.isCollidedFigure(figure)){
+			figure.Physics.vectors.gravity.power = 0
+		}else{
+			figure.Physics.vectors.gravity.power = 1
+		}
 	}
 	update(){
-		this.gravity()
+		//this.gravity()
 
 		// Vector Update
 		this.self.vector.x = 0
@@ -17,8 +28,8 @@ class Physics{
 		for(let vec in this.vectors){
 			vec = this.vectors[vec]
 
-			this.self.vector.x += vec.x
-			this.self.vector.y += vec.y
+			this.self.vector.x += vec.x*vec.power
+			this.self.vector.y += vec.y*vec.power
 		}
 
 		// Update Position of Dots And Center
