@@ -16,7 +16,15 @@ var scene = new Scene()
 
 scene.add(new Circle(150,150,80,5))
 scene.add(new Rectangle(150,350,150,30,false))
-//scene.add(new Figure([new Dot(150,150),new Dot(250,150),new Dot(250,250),new Dot(150,250)], new Center(200,200)))
+
+let center = scene.gameobjects[0].figure.center
+console.log(center)
+
+// Correct Rotation ALLLEEERTRRT
+scene.gameobjects[0].figure.Physics.GenerateRotateBase(center.x, center.y)
+scene.gameobjects[0].figure.Physics.rotate(Math.PI/4)
+console.log(scene.gameobjects[0].figure.Physics.gyroscope(center.x, center.y))
+
 
 var fps = 60 
 
